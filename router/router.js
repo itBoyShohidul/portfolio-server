@@ -63,7 +63,7 @@ router.post("/add-project", upload.single("project"), (req, res, next) => {
   if (req.body !== null) {
     try {
       const { name, type, description, liveLink, sourceCode } = req.body;
-      const fileInfo = req.file.path;
+      const fileInfo = req.file.filename;
 
       Project.create({
         name,
